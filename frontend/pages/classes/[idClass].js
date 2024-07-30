@@ -18,6 +18,7 @@ const ClassChart = dynamic(() => import('../../components/PerformanceChart'), {
 
 import ClassRanking from '../../components/ClassRanking'
 import RadarGraph from '../../components/RadarGraph'
+import SubmissionChart from '../../components/SubmissionChart'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props
@@ -59,12 +60,7 @@ function ClassDetails({ subjects, difficulties, listsSubs, students }) {
                 <Grid item xs={12} sm={12} md={12} lg={12}>
                   <div className={styles.secondarycard}>
                     <h2>Submissões diárias</h2>
-                      <BarChart width={1230} height={505} data={data4}>
-                        <XAxis dataKey="name"/>
-                        <YAxis />
-                        <Tooltip/>
-                        <Bar dataKey="submissoes_por_dia" fill="#8884d8" name="Submissões do dia"/>
-                      </BarChart>
+                        <SubmissionChart data = {data4}/>
                   </div>
                 </Grid>
             </Grid>
