@@ -8,6 +8,10 @@ import StudentCards from '../../components/StudentCards'
 
 import { useState } from 'react'
 
+import {XAxis, YAxis, Tooltip, BarChart, Bar} from 'recharts';
+
+import data4 from "../../../submissoes.json"
+
 const ClassChart = dynamic(() => import('../../components/PerformanceChart'), {
   ssr: false
 })
@@ -38,6 +42,7 @@ function a11yProps(index) {
   }
 }
 
+
 function ClassDetails({ subjects, difficulties, listsSubs, students }) {
   const [value, setValue] = useState(0)
 
@@ -54,10 +59,17 @@ function ClassDetails({ subjects, difficulties, listsSubs, students }) {
                 <Grid item xs={12} sm={12} md={12} lg={12}>
                   <div className={styles.secondarycard}>
                     <h2>Submissões diárias</h2>
+                      <BarChart width={1230} height={505} data={data4}>
+                        <XAxis dataKey="name"/>
+                        <YAxis />
+                        <Tooltip/>
+                        <Bar dataKey="submissoes_por_dia" fill="#8884d8" name="Submissões do dia"/>
+                      </BarChart>
                   </div>
                 </Grid>
             </Grid>
           </div>
+          
           <div className={styles.containercharts}>
             <Grid
               container
