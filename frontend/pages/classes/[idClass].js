@@ -1,5 +1,4 @@
 import { Box, Grid, Tabs, Tab, Paper } from '@mui/material'
-
 import styles from '../../styles/Home.module.css'
 import { getAPIClient } from '../../utils/axiosapi'
 
@@ -7,8 +6,6 @@ import dynamic from 'next/dynamic'
 import StudentCards from '../../components/StudentCards'
 
 import { useState } from 'react'
-
-import {XAxis, YAxis, Tooltip, BarChart, Bar} from 'recharts';
 
 import data4 from "../../../submissoes.json"
 

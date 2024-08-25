@@ -13,6 +13,7 @@ import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined"
 import ChecklistRtlOutlinedIcon from "@mui/icons-material/ChecklistRtlOutlined"
 import ViewListOutlinedIcon from "@mui/icons-material/ViewListOutlined"
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined"
+import LibraryBooksOutlinedIcon from '@mui/icons-material/LibraryBooksOutlined';
 
 export default function MenuStudent() {
   const { logout } = useContext(AuthContext)
@@ -69,6 +70,30 @@ export default function MenuStudent() {
             </ListItemIcon>
             <ListItemText
               primary="Listas"
+              sx={{
+                color: router.pathname.includes("/listgrades") && "white",
+              }}
+            />
+          </ListItemButton>
+        </ListItem>
+        <ListItem sx={{ color: "#248df4" }} disablePadding>
+          <ListItemButton
+            component="a"
+            href="/students/performance"
+            sx={{
+              backgroundColor:
+                router.pathname.includes("/listgrades") && "#248df4",
+            }}
+          >
+            <ListItemIcon sx={{ color: "#248df4" }}>
+              <LibraryBooksOutlinedIcon
+                sx={{
+                  color: router.pathname.includes("/listgrades") && "white",
+                }}
+              />
+            </ListItemIcon>
+            <ListItemText
+              primary="Desempenho"
               sx={{
                 color: router.pathname.includes("/listgrades") && "white",
               }}
